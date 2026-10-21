@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>陈永涛 · AIGC 视频设计师 / 制作师 — 作品集</title>
+    <meta name="description" content="陈永涛的求职作品集：AI 漫剧、AIGC 广告与电商视频、品牌 VI、文创 IP 与游戏 UI 设计。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f3f5f4;
+        --surface: #ffffff;
+        --surface-2: #e9edec;
+        --ink: #1f2c33;
+        --ink-soft: #43555f;
+        --muted: #75858e;
+        --line: #d5dcdb;
+        --accent: #38607a;
+        --accent-soft: #dce7ec;
+        --video-bg: #10181d;
+        --shadow: 0 18px 44px rgba(23, 38, 48, 0.14);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #12181c;
+          --surface: #1a2227;
+          --surface-2: #212c32;
+          --ink: #e3ebee;
+          --ink-soft: #b3c2c9;
+          --muted: #7f929c;
+          --line: #2b383f;
+          --accent: #93b8cc;
+          --accent-soft: #24343e;
+          --video-bg: #0a0f12;
+          --shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        * { transition: none !important; }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-weight: 300;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { display: block; max-width: 100%; }
+      a { color: var(--accent); }
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+      /* ---------- 顶部导航 ---------- */
+      header.site {
+        position: sticky; top: 0; z-index: 40;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 16px; padding-top: 14px; padding-bottom: 14px;
+      }
+      .nav .brand { font-weight: 900; font-size: 17px; letter-spacing: 0.14em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+      .nav .brand small { display: block; font-weight: 400; font-size: 10px; letter-spacing: 0.28em; color: var(--muted); }
+      .nav nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+      .nav nav a {
+        color: var(--ink-soft); text-decoration: none; font-size: 14px; font-weight: 400;
+        padding: 6px 12px; border-radius: 999px;
+      }
+      .nav nav a:hover { color: var(--ink); background: var(--surface-2); }
+
+      /* ---------- Hero ---------- */
+      .hero { padding: 84px 0 64px; }
+      .hero .role-line {
+        display: flex; align-items: center; gap: 14px;
+        color: var(--accent); font-size: 14px; font-weight: 500; letter-spacing: 0.32em;
+        margin: 0 0 22px;
+      }
+      .hero .role-line::after { content: ""; height: 1px; background: var(--line); flex: 1; }
+      .hero h1 {
+        margin: 0; font-size: clamp(52px, 9vw, 92px); font-weight: 900;
+        letter-spacing: 0.08em; line-height: 1.12;
+      }
+      .hero h1 .en { display: block; font-size: clamp(13px, 2vw, 16px); font-weight: 400; letter-spacing: 0.52em; color: var(--muted); margin-top: 14px; }
+      .hero .lead { max-width: 640px; font-size: 17px; color: var(--ink-soft); margin: 30px 0 0; }
+      .hero .lead strong { font-weight: 500; color: var(--ink); }
+      .hero-meta { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 34px; font-size: 13.5px; color: var(--muted); }
+      .hero-meta b { color: var(--ink-soft); font-weight: 500; margin-right: 8px; }
+      .hero-meta a { text-decoration: none; }
+      .hero-meta a:hover { text-decoration: underline; }
+
+      /* ---------- 通用区块 ---------- */
+      section.block { padding: 72px 0 8px; }
+      .sec-head { margin-bottom: 40px; }
+      .sec-head .sec-no { font-size: 12px; letter-spacing: 0.4em; color: var(--muted); font-weight: 400; }
+      .sec-head h2 { margin: 8px 0 6px; font-size: clamp(28px, 4.4vw, 38px); font-weight: 900; letter-spacing: 0.06em; }
+      .sec-head p { margin: 0; color: var(--muted); font-size: 14.5px; max-width: 560px; }
+
+      /* ---------- 视频 ---------- */
+      .player {
+        position: relative; background: var(--video-bg); overflow: hidden;
+        border-radius: 6px; cursor: pointer;
+      }
+      .player img.poster { width: 100%; height: 100%; object-fit: cover; }
+      .player .shade {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, rgba(8, 14, 18, 0.55), rgba(8, 14, 18, 0) 46%);
+      }
+      .player .play {
+        position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        width: 68px; height: 68px; border-radius: 50%;
+        border: 1.5px solid rgba(255, 255, 255, 0.85);
+        background: rgba(10, 18, 23, 0.42);
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .player:hover .play { background: rgba(10, 18, 23, 0.66); transform: translate(-50%, -50%) scale(1.06); }
+      .player .play svg { width: 24px; height: 24px; fill: #fff; margin-left: 3px; }
+      .player .dur {
+        position: absolute; right: 12px; bottom: 12px;
+        font-size: 12px; letter-spacing: 0.12em; color: #eef4f6;
+        background: rgba(8, 14, 18, 0.6); padding: 3px 9px; border-radius: 4px;
+      }
+      .player video { width: 100%; height: 100%; display: block; background: #000; }
+      .player .verr {
+        position: absolute; inset: 0; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 12px;
+        background: rgba(8, 14, 18, 0.88); color: #eef4f6;
+        font-size: 14px; text-align: center; padding: 20px; z-index: 3;
+      }
+      .player .verr a {
+        color: #fff; text-decoration: none; font-size: 13.5px;
+        border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 999px; padding: 6px 18px;
+      }
+      .player .verr a:hover { background: rgba(255, 255, 255, 0.14); }
+      .player .verr .vrow { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+      .player .verr button {
+        color: #fff; background: transparent; font: inherit; font-size: 13.5px;
+        border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 999px; padding: 6px 18px; cursor: pointer;
+      }
+      .player .verr button:hover { background: rgba(255, 255, 255, 0.14); }
+      .player .vload {
+        position: absolute; inset: 0; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 14px;
+        background: rgba(8, 14, 18, 0.55); color: #eef4f6;
+        font-size: 13.5px; z-index: 2; pointer-events: none;
+      }
+      .player .vload .spin {
+        width: 34px; height: 34px; border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.25); border-top-color: #fff;
+        animation: vspin 0.9s linear infinite;
+      }
+      @keyframes vspin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) { .player .vload .spin { animation: none; } }
+      .ratio-16x9 { aspect-ratio: 16 / 9; }
+      .ratio-1x1 { aspect-ratio: 1 / 1; }
+      .ratio-9x16 { aspect-ratio: 9 / 16; }
+
+      .work { padding: 34px 0 40px; border-top: 1px solid var(--line); }
+      .work:first-of-type { border-top: none; padding-top: 0; }
+      .work-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+      .work-head h3 { margin: 0; font-size: 21px; font-weight: 700; letter-spacing: 0.03em; }
+      .work-head .tag {
+        font-size: 11.5px; letter-spacing: 0.14em; color: var(--accent);
+        border: 1px solid var(--accent); border-radius: 999px; padding: 1px 10px; font-weight: 400;
+      }
+      .work .desc { color: var(--ink-soft); font-size: 15px; margin: 0 0 18px; max-width: 760px; }
+      .work .meta { display: flex; flex-wrap: wrap; gap: 8px 26px; font-size: 13px; color: var(--muted); margin-top: 16px; }
+      .work .meta b { color: var(--ink-soft); font-weight: 500; margin-right: 7px; }
+
+      .featured .work-head h3 { font-size: clamp(26px, 4vw, 34px); font-weight: 900; }
+      .featured .stills { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+      .featured .stills figure { margin: 0; }
+      .featured .stills img { border-radius: 6px; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+      .featured .stills figcaption { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+
+      .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+      .video-grid .work { padding-top: 30px; }
+      .video-grid .player.portrait { max-width: 330px; }
+
+      /* ---------- 平面设计 ---------- */
+      .design-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+      .design-grid .work.wide { grid-column: 1 / -1; }
+      .shots { display: grid; gap: 14px; }
+      .shots.two { grid-template-columns: 1fr 1fr; }
+      .shots figure { margin: 0; }
+      .shots img, .solo-shot {
+        width: 100%; border-radius: 6px; background: var(--surface-2);
+        cursor: zoom-in;
+      }
+      .shots figcaption { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+      .fit-contain { object-fit: contain; }
+      .h-square { aspect-ratio: 1 / 1; object-fit: cover; }
+      .shots.two.airy { gap: 32px; max-width: 940px; margin: 6px auto 0; align-items: start; }
+      .h-tall { aspect-ratio: 3 / 4; object-fit: cover; }
+      .h-std { aspect-ratio: 4 / 3; object-fit: cover; }
+      .h-wide { aspect-ratio: 16 / 10; object-fit: cover; }
+
+      .longshot { position: relative; }
+      .longshot .frame {
+        max-height: 560px; overflow: hidden; border-radius: 6px; position: relative;
+        transition: max-height 0.5s ease;
+      }
+      .longshot.open .frame { max-height: 3200px; }
+      .longshot .frame img { width: 100%; cursor: zoom-in; }
+      .longshot .fade {
+        position: absolute; left: 0; right: 0; bottom: 0; height: 130px;
+        background: linear-gradient(to top, var(--bg), transparent);
+        pointer-events: none;
+      }
+      .longshot.open .fade { display: none; }
+      .longshot .toggle {
+        margin-top: 12px; appearance: none; border: 1px solid var(--line);
+        background: var(--surface); color: var(--ink-soft);
+        font: inherit; font-size: 13.5px; font-weight: 400;
+        padding: 8px 18px; border-radius: 999px; cursor: pointer;
+      }
+      .longshot .toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+      /* ---------- 关于我 ---------- */
+      .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; }
+      .about-grid p { margin: 0 0 16px; color: var(--ink-soft); font-size: 15.5px; }
+      .about-grid p strong { color: var(--ink); font-weight: 500; }
+      .skill-group { margin-bottom: 22px; }
+      .skill-group h4 { margin: 0 0 10px; font-size: 13px; letter-spacing: 0.24em; color: var(--muted); font-weight: 500; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+      .chips span {
+        font-size: 13.5px; font-weight: 400; color: var(--ink-soft);
+        background: var(--surface); border: 1px solid var(--line);
+        padding: 5px 13px; border-radius: 999px;
+      }
+
+      /* ---------- 页脚 ---------- */
+      footer.site { margin-top: 84px; border-top: 1px solid var(--line); padding: 56px 0 64px; }
+      footer.site h2 { margin: 0 0 10px; font-size: clamp(26px, 4vw, 34px); font-weight: 900; letter-spacing: 0.05em; }
+      footer.site p { color: var(--ink-soft); margin: 0 0 22px; font-size: 15px; }
+      .mail-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+      .mail-row a.mail {
+        font-size: clamp(18px, 3.4vw, 24px); font-weight: 500; color: var(--ink);
+        text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 2px;
+      }
+      .copy-btn {
+        appearance: none; border: 1px solid var(--line); background: var(--surface);
+        color: var(--ink-soft); font: inherit; font-size: 13px; font-weight: 400;
+        padding: 7px 16px; border-radius: 999px; cursor: pointer;
+      }
+      .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+      .copy-btn.done { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+      .foot-note { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; }
+
+      /* ---------- 大图查看 ---------- */
+      .lightbox {
+        position: fixed; inset: 0; z-index: 90; display: none;
+        background: rgba(9, 14, 17, 0.92);
+        align-items: center; justify-content: center; padding: 24px;
+      }
+      .lightbox.open { display: flex; }
+      .lightbox img { max-width: 100%; max-height: 88vh; object-fit: contain; border-radius: 4px; box-shadow: var(--shadow); }
+      .lightbox .lb-cap { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; color: #c8d6dc; font-size: 13.5px; padding: 0 20px; }
+      .lightbox .lb-close {
+        position: absolute; top: 16px; right: 16px; width: 42px; height: 42px;
+        border-radius: 50%; border: 1px solid rgba(255,255,255,0.35);
+        background: rgba(255,255,255,0.08); color: #fff; font-size: 19px; cursor: pointer; line-height: 1;
+      }
+
+      @media (max-width: 760px) {
+        .wrap { padding: 0 18px; }
+        .hero { padding: 56px 0 44px; }
+        section.block { padding-top: 52px; }
+        .video-grid, .design-grid, .about-grid { grid-template-columns: 1fr; }
+        .about-grid { gap: 30px; }
+        .featured .stills { grid-template-columns: 1fr; }
+        .shots.two { grid-template-columns: 1fr 1fr; gap: 10px; }
+        .shots.two.airy { gap: 16px; }
+        .video-grid .player.portrait { max-width: 300px; }
+        .nav .brand small { display: none; }
+        .nav nav a { padding: 6px 8px; font-size: 13.5px; }
+        .player .play { width: 56px; height: 56px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap nav">
+        <a class="brand" href="#top">陈永涛<small>PORTFOLIO</small></a>
+        <nav>
+          <a href="#top">首页</a>
+          <a href="#video">AI 影像</a>
+          <a href="#design">平面设计</a>
+          <a href="#about">关于我</a>
+          <a href="#contact">联系</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <div class="wrap hero">
+        <p class="role-line">AIGC 视频设计师 / 制作师</p>
+        <h1>陈永涛<span class="en">CHEN YONGTAO · PORTFOLIO</span></h1>
+        <p class="lead">专注 <strong>AIGC 影像创作</strong>，覆盖 AI 短剧、广告、电商视频全流程，同时具备品牌视觉与平面设计能力。以 AI 为笔，把文字里的想象，做成能看的画面。</p>
+        <div class="hero-meta">
+          <span><b>求职意向</b>AIGC 视频设计师 / 制作师</span>
+          <span><b>作品</b>7 部 AI 影像 · 7 组平面设计</span>
+          <span><b>邮箱</b><a href="mailto:13365723328@163.com">13365723328@163.com</a></span>
+        </div>
+      </div>
+
+      <!-- AI 影像 -->
+      <section class="block" id="video">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="sec-no">01 — VIDEO</span>
+            <h2>AI 影像作品</h2>
+            <p>点击封面即可播放。涵盖 AI 漫剧、广告、电商、科普与游戏演示，全部独立完成生成与后期。</p>
+          </div>
+
+          <!-- 代表作：将进酒 -->
+          <article class="work featured">
+            <div class="work-head">
+              <h3>《将进酒》AI 漫剧</h3>
+              <span class="tag">代表作</span>
+            </div>
+            <p class="desc">改编自李白《将进酒》的 90 秒国风 AI 漫剧，30 个分镜全动态生成。独立完成诗歌解读、剧本与分镜头脚本、人物 / 背景 / 道具的 AI 美术设定，Flova 与可灵双平台生成视频，中文配音配乐混音，最后以 Kdenlive 精剪并制作中文字幕。</p>
+            <div class="player ratio-16x9" data-video="assets/jiangjinjiu.mp4" role="button" tabindex="0" aria-label="播放《将进酒》AI 漫剧">
+              <img class="poster" src="assets/jiangjinjiu.jpg" alt="《将进酒》AI 漫剧封面：李白举杯吟诗剧照" />
+              <div class="shade"></div>
+              <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="dur">01:30</span>
+            </div>
+            <div class="stills">
+              <figure>
+                <img src="assets/jjq-still1.jpg" alt="《将进酒》剧照：黄河日出，三位诗人同行" data-zoom data-cap="《将进酒》剧照 — 黄河日出" />
+                <figcaption>剧照 — 黄河日出，三位诗人同行</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/jjq-still2.jpg" alt="《将进酒》剧照：黄河日出场景" data-zoom data-cap="《将进酒》剧照 — 黄河日出" />
+                <figcaption>剧照 — 黄河日出</figcaption>
+              </figure>
+            </div>
+            <div class="meta">
+              <span><b>类型</b>AI 漫剧 / 国风短片</span>
+              <span><b>工具</b>Flova · 可灵 · Kdenlive</span>
+              <span><b>负责</b>剧本、分镜、AI 美术、生成、配音混音、剪辑字幕</span>
+            </div>
+          </article>
+
+          <div class="video-grid">
+            <article class="work">
+              <div class="work-head"><h3>AI 漫剧《短剧习作》</h3></div>
+              <p class="desc">AI 短剧课程作业。用 AI 完成人物表演、场景与运镜的竖屏短剧片段创作。</p>
+              <div class="player ratio-9x16 portrait" data-video="assets/comic-drama.mp4" role="button" tabindex="0" aria-label="播放 AI 漫剧《短剧习作》">
+                <img class="poster" src="assets/comic-drama.jpg" alt="AI 漫剧《短剧习作》封面：男主角举杯剧照" />
+                <div class="shade"></div>
+                <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span class="dur">01:04</span>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>AI 短剧（竖屏）</span>
+                <span><b>工具</b>豆包 AI</span>
+              </div>
+            </article>
+
+            <article class="work">
+              <div class="work-head"><h3>AIGC 香水广告</h3></div>
+              <p class="desc">AI 生成的产品广告习作：香水静物场景，练习 AI 广告的产品质感与氛围表达。</p>
+              <div class="player ratio-16x9" data-video="assets/aigc-ad.mp4" role="button" tabindex="0" aria-label="播放 AIGC 香水广告">
+                <img class="poster" src="assets/aigc-ad.jpg" alt="AIGC 香水广告封面：香水静物场景" />
+                <div class="shade"></div>
+                <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span class="dur">00:10</span>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>产品广告</span>
+                <span><b>工具</b>豆包 AI</span>
+              </div>
+            </article>
+
+            <article class="work">
+              <div class="work-head"><h3>百雀羚电商视频</h3></div>
+              <p class="desc">为国货美妆品牌百雀羚制作的电商短视频：水花与绿叶意象，练习品牌调性与卖点节奏。</p>
+              <div class="player ratio-1x1" data-video="assets/pechoin-ecommerce.mp4" role="button" tabindex="0" aria-label="播放百雀羚电商视频">
+                <img class="poster" src="assets/pechoin-ecommerce.jpg" alt="百雀羚电商视频封面：水花绿叶中的产品" />
+                <div class="shade"></div>
+                <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span class="dur">00:15</span>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>电商短视频</span>
+                <span><b>工具</b>可灵 AI</span>
+              </div>
+            </article>
+
+            <article class="work">
+              <div class="work-head"><h3>电脑主机装机科普视频</h3></div>
+              <p class="desc">AI 课程作业：用 AI 制作的电脑主机装机教学视频，练习 AI 在知识类内容中的叙事能力。</p>
+              <div class="player ratio-1x1" data-video="assets/pc-build-edu.mp4" role="button" tabindex="0" aria-label="播放电脑主机装机科普视频">
+                <img class="poster" src="assets/pc-build-edu.jpg" alt="电脑主机装机科普视频封面" />
+                <div class="shade"></div>
+                <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span class="dur">01:27</span>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>科普教育视频</span>
+                <span><b>工具</b>AI 生成 + 剪辑</span>
+              </div>
+            </article>
+
+            <article class="work">
+              <div class="work-head"><h3>AI 游戏 DEMO 演示</h3></div>
+              <p class="desc">AI 课程作业：用可灵 AI 生成的游戏概念演示，包含角色演出与游戏 UI 界面。</p>
+              <div class="player ratio-16x9" data-video="assets/game-demo.mp4" role="button" tabindex="0" aria-label="播放 AI 游戏 DEMO 演示">
+                <img class="poster" src="assets/game-demo.jpg" alt="AI 游戏 DEMO 演示封面：游戏角色与界面" />
+                <div class="shade"></div>
+                <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span class="dur">00:24</span>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>游戏概念演示</span>
+                <span><b>工具</b>可灵 AI</span>
+              </div>
+            </article>
+
+            <article class="work">
+              <div class="work-head"><h3>古城大场景走位</h3></div>
+              <p class="desc">由静态照片经 AI 转为动态的大场景走位镜头，练习图生视频的运镜控制。</p>
+              <div class="player ratio-16x9" data-video="assets/walkthrough.mp4" role="button" tabindex="0" aria-label="播放古城大场景走位">
+                <img class="poster" src="assets/walkthrough.jpg" alt="古城大场景走位封面：古城全景" />
+                <div class="shade"></div>
+                <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span class="dur">00:05</span>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>图生视频 / 运镜练习</span>
+                <span><b>工具</b>AI 图生视频</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 平面设计 -->
+      <section class="block" id="design">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="sec-no">02 — DESIGN</span>
+            <h2>平面与品牌设计</h2>
+            <p>品牌识别、文创产品、海报封面与游戏 UI。点击任意图片可放大查看。</p>
+          </div>
+
+          <div class="design-grid">
+            <article class="work wide">
+              <div class="work-head"><h3>森野 SENYE 品牌识别系统</h3><span class="tag">品牌设计</span></div>
+              <p class="desc">户外用品品牌「森野 SENYE」的品牌识别设计：松林、帐篷与山野线条构成主标识，配套中英文字体标志。</p>
+              <div class="shots two airy">
+                <figure>
+                  <img class="h-tall" src="assets/senye-logo.jpg" alt="森野 SENYE 主标识：松林、帐篷与山野线条" data-zoom data-cap="森野 SENYE — 主标识" />
+                  <figcaption>主标识</figcaption>
+                </figure>
+                <figure>
+                  <img class="h-square" src="assets/senye-logo-type.jpg" alt="森野 SENYE 字体标志" data-zoom data-cap="森野 SENYE — 字体标志" />
+                  <figcaption>字体标志</figcaption>
+                </figure>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>品牌识别系统（课程作业）</span>
+                <span><b>内容</b>主标识 · 字体设计</span>
+              </div>
+            </article>
+
+            <article class="work wide">
+              <div class="work-head"><h3>咖啡品牌 VI 设计《咖0啡单》</h3><span class="tag">VI 设计</span></div>
+              <p class="desc">VI 设计课程作业：虚拟咖啡品牌「咖0啡单」的视觉系统，含菜单视觉与文创海报（场景图含 AI 生成 mockup）。</p>
+              <img class="solo-shot" src="assets/vi-coursework.jpg" alt="咖啡品牌《咖0啡单》VI 设计：菜单与文创海报" data-zoom data-cap="咖啡品牌 VI 设计《咖0啡单》" />
+              <div class="meta">
+                <span><b>类型</b>品牌 VI（课程作业）</span>
+                <span><b>内容</b>菜单视觉 · 文创海报</span>
+              </div>
+            </article>
+
+            <article class="work wide">
+              <div class="work-head"><h3>文创 IP 形象 3D 建模</h3><span class="tag">文创产品</span></div>
+              <p class="desc">铁路文创 IP 的主、副形象 3D 建模：主形象为蓝衣少年，副形象为红领巾小鸭，均以三视图规范呈现。</p>
+              <div class="shots two">
+                <figure>
+                  <img class="h-std" src="assets/mascot-main-3d.jpg" alt="文创 IP 主形象 3D 建模三视图：蓝衣少年" data-zoom data-cap="文创 IP 主形象 — 3D 三视图" />
+                  <figcaption>主形象 — 蓝衣少年</figcaption>
+                </figure>
+                <figure>
+                  <img class="h-std" src="assets/mascot-sub-3d.jpg" alt="文创 IP 副形象 3D 建模三视图：红领巾小鸭" data-zoom data-cap="文创 IP 副形象 — 3D 三视图" />
+                  <figcaption>副形象 — 红领巾小鸭</figcaption>
+                </figure>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>文创产品设计</span>
+                <span><b>内容</b>IP 形象 3D 建模 · 三视图</span>
+              </div>
+            </article>
+
+            <article class="work">
+              <div class="work-head"><h3>《春日铁道行》文创明信片</h3></div>
+              <p class="desc">文创产品的最终形态：铁路主题明信片设计，主、副 IP 形象登场。</p>
+              <img class="solo-shot h-wide" src="assets/postcard.jpg" alt="《春日铁道行》文创明信片：铁路主题插画" data-zoom data-cap="《春日铁道行》文创明信片" />
+              <div class="meta">
+                <span><b>类型</b>文创产品</span>
+                <span><b>内容</b>明信片设计</span>
+              </div>
+            </article>
+
+            <article class="work">
+              <div class="work-head"><h3>《东亚水墨》画展海报</h3></div>
+              <p class="desc">上海驰翰美术馆「东亚国家中世纪水墨画展览」海报：大字排印与水墨长卷结合。</p>
+              <img class="solo-shot h-tall fit-contain" src="assets/ink-poster.jpg" alt="《东亚水墨》画展海报设计" data-zoom data-cap="《东亚水墨》画展海报" />
+              <div class="meta">
+                <span><b>类型</b>海报设计</span>
+                <span><b>内容</b>展览主视觉</span>
+              </div>
+            </article>
+
+            <article class="work">
+              <div class="work-head"><h3>《福州船政博物馆》杂志封面</h3></div>
+              <p class="desc">为福州船政博物馆设计的杂志封面：帆船题材插画封面。</p>
+              <img class="solo-shot h-tall fit-contain" src="assets/fuzhou-cover.jpg" alt="《福州船政博物馆》杂志封面设计：帆船插画" data-zoom data-cap="《福州船政博物馆》杂志封面" />
+              <div class="meta">
+                <span><b>类型</b>封面设计</span>
+                <span><b>内容</b>杂志封面</span>
+              </div>
+            </article>
+
+            <article class="work wide">
+              <div class="work-head"><h3>《仙缘·逍遥录》游戏 UI 设计</h3><span class="tag">界面设计</span></div>
+              <p class="desc">界面设计课程期末作业：仙侠手游 UI 全套设计，含主界面、角色养成、仓库、技能树与队伍系统五屏。</p>
+              <div class="longshot" id="uiLong">
+                <div class="frame">
+                  <img src="assets/ui-final.jpg" alt="《仙缘·逍遥录》游戏 UI 长图：主界面、角色、仓库、技能、队伍五屏" data-zoom data-cap="《仙缘·逍遥录》游戏 UI — 五屏长图" />
+                  <div class="fade"></div>
+                </div>
+                <button class="toggle" type="button" id="uiToggle" aria-expanded="false">展开完整长图</button>
+              </div>
+              <div class="meta">
+                <span><b>类型</b>游戏 UI（期末作业）</span>
+                <span><b>内容</b>主界面 · 角色 · 仓库 · 技能 · 队伍</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 关于我 -->
+      <section class="block" id="about">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="sec-no">03 — ABOUT</span>
+            <h2>关于我</h2>
+          </div>
+          <div class="about-grid">
+            <div>
+              <p>我是<strong>陈永涛</strong>，一名以 AIGC 为核心能力的影像创作者。代表作《将进酒》从诗歌解读、剧本分镜到 AI 生成、配音混音与剪辑字幕，全部由我一人完成——我习惯把一个想法完整地做成片子。</p>
+              <p>除了动态影像，我也做品牌 VI、文创 IP 与游戏 UI：既能驾驭 AI 生成的不确定性，也守得住设计的基本功。目前求职意向为 <strong>AIGC 视频设计师 / 制作师</strong>。</p>
+            </div>
+            <div>
+              <div class="skill-group">
+                <h4>AI 影像</h4>
+                <div class="chips">
+                  <span>可灵 AI</span><span>即梦</span><span>豆包</span><span>Flova</span><span>图生视频</span><span>AI 配音 / 混音</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>剪辑与后期</h4>
+                <div class="chips">
+                  <span>Kdenlive</span><span>剪映</span><span>中文字幕制作</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>设计</h4>
+                <div class="chips">
+                  <span>品牌 VI 设计</span><span>海报 / 封面</span><span>文创 IP 设计</span><span>3D 形象建模</span><span>游戏 UI 设计</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 联系 -->
+    <footer class="site" id="contact">
+      <div class="wrap">
+        <h2>联系我</h2>
+        <p>对 AIGC 视频设计师 / 制作师岗位感兴趣，或想进一步了解以上作品，欢迎邮件联系。</p>
+        <div class="mail-row">
+          <a class="mail" href="mailto:13365723328@163.com">13365723328@163.com</a>
+          <button class="copy-btn" type="button" id="copyMail">复制邮箱</button>
+        </div>
+        <div class="foot-note">
+          <span>陈永涛 · AIGC 视频设计师 / 制作师</span>
+          <span>作品均为本人独立完成或课程作业</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 大图查看 -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片大图查看">
+      <button class="lb-close" type="button" id="lbClose" aria-label="关闭">×</button>
+      <img id="lbImg" alt="" hidden />
+      <div class="lb-cap" id="lbCap"></div>
+    </div>
+
+    <script>
+      (function () {
+        // 视频：点击封面后才加载播放；同一时间只播放一个。
+        // 先按普通地址加载；若浏览器报错或长时间拿不到画面（部分浏览器或
+        // 网络环境不支持分段加载时会直接失败），自动改为整段下载后用本地
+        // 地址播放；两种方式都失败才显示提示，并提供重试与直接打开。
+        var players = document.querySelectorAll(".player");
+        var blobUrls = {};
+        var lastActivated = null;
+        function pauseOthers(player) {
+          players.forEach(function (p) {
+            if (p === player) return;
+            var v = p.querySelector("video");
+            if (v) v.pause();
+          });
+        }
+        function resetPlayer(player) {
+          // 恢复成封面状态，让用户可以重新点击播放
+          if (player._origHtml != null) player.innerHTML = player._origHtml;
+          delete player.dataset.active;
+          player.style.cursor = "";
+        }
+        function activate(player) {
+          if (player.dataset.active) return;
+          if (player._origHtml == null) player._origHtml = player.innerHTML;
+          player.dataset.active = "1";
+          player.style.cursor = "default";
+          lastActivated = player;
+          startVideo(player, false);
+        }
+        function startVideo(player, useBlob) {
+          if (player === lastActivated) pauseOthers(player);
+          var token = (parseInt(player.dataset.attempt || "0", 10) || 0) + 1;
+          player.dataset.attempt = String(token);
+          function current() { return player.dataset.attempt === String(token); }
+          var src = player.getAttribute("data-video");
+          var poster = player.querySelector("img.poster");
+          var posterSrc = poster ? poster.getAttribute("src") : "";
+          player.innerHTML = "";
+          var video = document.createElement("video");
+          video.controls = true;
+          video.playsInline = true;
+          video.preload = "auto";
+          if (posterSrc) video.poster = posterSrc;
+          player.appendChild(video);
+
+          var load = document.createElement("div");
+          load.className = "vload";
+          var spin = document.createElement("span");
+          spin.className = "spin";
+          var tip = document.createElement("span");
+          tip.textContent = "视频加载中…";
+          load.appendChild(spin);
+          load.appendChild(tip);
+          player.appendChild(load);
+
+          var healthy = false;
+          var timer = null;
+          function markHealthy() {
+            healthy = true;
+            if (timer) { clearTimeout(timer); timer = null; }
+            if (load.parentNode) load.parentNode.removeChild(load);
+          }
+          ["loadeddata", "canplay", "playing"].forEach(function (ev) {
+            video.addEventListener(ev, markHealthy);
+          });
+          function fail() {
+            if (healthy || !current()) return;
+            if (timer) { clearTimeout(timer); timer = null; }
+            // 用户已经去看别的视频：这个播放器恢复成封面，不再抢播也不卡住
+            if (player !== lastActivated) { resetPlayer(player); return; }
+            if (!useBlob) { startVideo(player, true); }
+            else { showErr(player); }
+          }
+          video.addEventListener("error", function () {
+            if (video.readyState >= 2) { markHealthy(); return; }
+            fail();
+          }, true);
+          timer = setTimeout(function () {
+            if (!healthy && video.readyState < 2) fail();
+          }, 15000);
+
+          function begin(url) {
+            video.src = url;
+            // 用户已切换到别的视频时只加载不自动播，避免两个视频同时出声
+            if (player !== lastActivated) return;
+            var pr = video.play();
+            if (pr && pr.catch) pr.catch(function (err) {
+              if (err && err.name === "NotSupportedError") fail();
+              /* 其他情况多为自动播放受限，控件已显示，可手动点播放 */
+            });
+          }
+          if (useBlob) {
+            if (blobUrls[src]) { begin(blobUrls[src]); return; }
+            fetch(src).then(function (r) {
+              if (!r.ok) throw new Error("bad response");
+              return r.blob();
+            }).then(function (b) {
+              blobUrls[src] = URL.createObjectURL(b);
+              if (current() && player.contains(video)) begin(blobUrls[src]);
+            }).catch(function () { fail(); });
+          } else {
+            begin(src);
+          }
+        }
+        function showErr(player) {
+          var old = player.querySelector(".vload");
+          if (old) old.parentNode.removeChild(old);
+          if (player.querySelector(".verr")) return;
+          var src = player.getAttribute("data-video");
+          var box = document.createElement("div");
+          box.className = "verr";
+          var msg = document.createElement("span");
+          msg.textContent = "视频暂时加载失败";
+          var row = document.createElement("div");
+          row.className = "vrow";
+          var retry = document.createElement("button");
+          retry.type = "button";
+          retry.textContent = "重新加载";
+          retry.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (box.parentNode) box.parentNode.removeChild(box);
+            lastActivated = player;
+            startVideo(player, true);
+          });
+          var link = document.createElement("a");
+          link.href = src;
+          link.target = "_blank";
+          link.rel = "noopener";
+          link.textContent = "点此直接打开视频";
+          link.addEventListener("click", function (e) { e.stopPropagation(); });
+          row.appendChild(retry);
+          row.appendChild(link);
+          box.appendChild(msg);
+          box.appendChild(row);
+          player.appendChild(box);
+        }
+        players.forEach(function (player) {
+          player.addEventListener("click", function () { activate(player); });
+          player.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(player); }
+          });
+        });
+
+        // UI 长图展开 / 收起
+        var uiLong = document.getElementById("uiLong");
+        var uiToggle = document.getElementById("uiToggle");
+        if (uiLong && uiToggle) {
+          uiToggle.addEventListener("click", function () {
+            var open = uiLong.classList.toggle("open");
+            uiToggle.textContent = open ? "收起长图" : "展开完整长图";
+            uiToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          });
+        }
+
+        // 大图查看
+        var lb = document.getElementById("lightbox");
+        var lbImg = document.getElementById("lbImg");
+        var lbCap = document.getElementById("lbCap");
+        var lbClose = document.getElementById("lbClose");
+        function openLb(img) {
+          lbImg.hidden = false;
+          lbImg.src = img.getAttribute("src");
+          lbImg.alt = img.getAttribute("alt") || "";
+          lbCap.textContent = img.getAttribute("data-cap") || img.getAttribute("alt") || "";
+          lb.classList.add("open");
+          document.body.style.overflow = "hidden";
+          lbClose.focus();
+        }
+        function closeLb() {
+          lb.classList.remove("open");
+          lbImg.removeAttribute("src");
+          lbImg.hidden = true;
+          document.body.style.overflow = "";
+        }
+        document.querySelectorAll("[data-zoom]").forEach(function (img) {
+          img.addEventListener("click", function () { openLb(img); });
+        });
+        lbClose.addEventListener("click", closeLb);
+        lb.addEventListener("click", function (e) { if (e.target === lb) closeLb(); });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLb(); });
+
+        // 复制邮箱
+        var copyBtn = document.getElementById("copyMail");
+        if (copyBtn) {
+          copyBtn.addEventListener("click", function () {
+            var email = "13365723328@163.com";
+            function done() {
+              copyBtn.textContent = "已复制";
+              copyBtn.classList.add("done");
+              setTimeout(function () {
+                copyBtn.textContent = "复制邮箱";
+                copyBtn.classList.remove("done");
+              }, 2000);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(email).then(done).catch(function () { fallback(); });
+            } else { fallback(); }
+            function fallback() {
+              var ta = document.createElement("textarea");
+              ta.value = email;
+              ta.style.position = "fixed"; ta.style.opacity = "0";
+              document.body.appendChild(ta);
+              ta.select();
+              try { document.execCommand("copy"); done(); } catch (e) {}
+              document.body.removeChild(ta);
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
